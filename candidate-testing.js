@@ -27,8 +27,12 @@ console.log('Hello!!! ',candidateName);
 }
 
 function askQuestion() {
+  console.log('Inside ask question');
   // TODO 1.2b: Ask candidate the question and assign the response as candidateAnswer //
-for(let i = 0; i<= questions; i++){
+  console.log(questions.length)
+for(let i = 0; i < questions.length; i++){
+  console.log('Inside ask question loop');
+
   candidateAnswers[i] = input.question(questions[i]);
 }
 } 
@@ -36,11 +40,14 @@ for(let i = 0; i<= questions; i++){
 function gradeQuiz(candidateAnswers) {
 
   // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
-  if(candidateAnswer.toLowerCase() === correctAnswer.toLowerCase()) {
-    console.log('Your Answer is correct');
-  } else {
-    console.log('Your Answer is incorrect');
+  for(let i = 0; i<= candidateAnswers.length; i++){
+    if(candidateAnswers[i].toLowerCase() === correctAnswers[i].toLowerCase()) {
+      console.log('Your Answer is correct');
+    } else {
+      console.log('Your Answer is incorrect');
+    }
   }
+  
   
   let grade;  //TODO 3.2 use this variable to calculate the candidates score.
 
