@@ -23,29 +23,23 @@ let candidateAnswers = [];
 function askForName() {
   // TODO 1.1b: Ask for candidate's name //
 candidateName = input.question('What is your Name? ');
-console.log('Hello!!! ',candidateName);
 }
 
 function askQuestion() {
-  console.log('Inside ask question');
   // TODO 1.2b: Ask candidate the question and assign the response as candidateAnswer //
-  console.log(questions.length)
-for(let i = 0; i < questions.length; i++){
-  console.log('Inside ask question loop');
-
-  candidateAnswers[i] = input.question(questions[i]);
-}
+  for (let i = 0; i < questions.length; i++) {
+    candidateAnswers[i] = input.question(questions[i]);
+  }
 } 
 
 function gradeQuiz(candidateAnswers) {
 
   // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
-  for(let i = 0; i<= candidateAnswers.length; i++){
-    if(candidateAnswers[i].toLowerCase() === correctAnswers[i].toLowerCase()) {
-      console.log('Your Answer is correct');
-    } else {
-      console.log('Your Answer is incorrect');
-    }
+  console.log(`\nCanidate Name: ${candidateName}`);
+  for(let i = 0; i<candidateAnswers.length; i++){
+    console.log(`${i + 1}) ${questions[i]}`);
+    console.log(`Your Answer: ${candidateAnswers[i]}`);
+    console.log(`Correct Answer: ${correctAnswers[i]}\n`);
   }
   
   
@@ -58,7 +52,7 @@ function gradeQuiz(candidateAnswers) {
 function runProgram() {
   askForName();
   // TODO 1.1c: Greet candidate using their name //
-   console.log('Welcome '+ candidateName);
+  console.log('Welcome '+ candidateName);
   askQuestion();
   gradeQuiz(this.candidateAnswers);
 }
