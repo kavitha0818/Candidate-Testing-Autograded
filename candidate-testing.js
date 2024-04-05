@@ -10,7 +10,6 @@ let question = "Who was the first American woman in space? ";
 let correctAnswer = "Sally Ride";
 let candidateAnswer = '';
 
-
 //TODO: Variables for Part 2
 let questions = ["Who was the first American woman in space? ",
 "True or false: 5 kilometer == 5000 meters? ",
@@ -36,15 +35,24 @@ function gradeQuiz(candidateAnswers) {
 
   // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
   console.log(`\nCanidate Name: ${candidateName}`);
-  for(let i = 0; i<candidateAnswers.length; i++){
+  let correctAnswersCount = 0;
+  for (let i = 0; i < candidateAnswers.length; i++) {
+
+    if (candidateAnswers[i].toLowerCase() === correctAnswers[i].toLowerCase()) {
+      correctAnswersCount++;
+    }
     console.log(`${i + 1}) ${questions[i]}`);
     console.log(`Your Answer: ${candidateAnswers[i]}`);
     console.log(`Correct Answer: ${correctAnswers[i]}\n`);
   }
-  
-  
-  let grade;  //TODO 3.2 use this variable to calculate the candidates score.
 
+  let grade = correctAnswersCount / questions.length * 100;  //TODO 3.2 use this variable to calculate the candidates score.
+
+  if (grade >= 80) {
+    console.log(`Congratulations !!! You passed the Quiz with ${grade}%`);
+  } else {
+    console.log('We regret to inform that you failed this test. Try Again.');
+  }
 
   return grade;
 }
