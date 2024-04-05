@@ -33,7 +33,7 @@ function askQuestion() {
 
 function gradeQuiz(candidateAnswers) {
 
-  // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
+  // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly  
   console.log(`\nCanidate Name: ${candidateName}`);
   let correctAnswersCount = 0;
   for (let i = 0; i < candidateAnswers.length; i++) {
